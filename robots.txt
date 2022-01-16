@@ -3,4 +3,5 @@ Allow: /
 
 Disallow: /file/
 
+Sitemap: https://www.daijl.cn/baidusitemap.xml
 Sitemap: https://www.daijl.cn/sitemap.xml
