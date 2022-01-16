@@ -1,0 +1,473 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>interview-css | 高级前端进阶</title><meta name="keywords" content="Markdown,标记语言"><meta name="author" content="souldjl"><meta name="copyright" content="souldjl"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="CSS 部分问题与解答这里是 Front End Web Development Quiz 中的 CSS部分问题与解答. Q: CSS 属性是否区分大小写？    123ul &amp;#123;    MaRGin: 10px;&amp;#125;       A: 不区分。  HTML，CSS都对大小写不敏感，但为了更好的可读性和团队协作一般都小写，而在XHTML 中元素名称和属性是必须小写的。  Q: 行内">
+<meta property="og:type" content="article">
+<meta property="og:title" content="interview-css">
+<meta property="og:url" content="https://daijl.cn/37435.html">
+<meta property="og:site_name" content="高级前端进阶">
+<meta property="og:description" content="CSS 部分问题与解答这里是 Front End Web Development Quiz 中的 CSS部分问题与解答. Q: CSS 属性是否区分大小写？    123ul &amp;#123;    MaRGin: 10px;&amp;#125;       A: 不区分。  HTML，CSS都对大小写不敏感，但为了更好的可读性和团队协作一般都小写，而在XHTML 中元素名称和属性是必须小写的。  Q: 行内">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/sunchaser-lilu/sunchaser-cdn@master/lilu.org.cn/index_1.png">
+<meta property="article:published_time" content="2022-01-16T04:38:37.000Z">
+<meta property="article:modified_time" content="2022-01-16T04:38:37.000Z">
+<meta property="article:author" content="souldjl">
+<meta property="article:tag" content="Markdown">
+<meta property="article:tag" content="标记语言">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/sunchaser-lilu/sunchaser-cdn@master/lilu.org.cn/index_1.png"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://daijl.cn/37435"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="baidu_site_verification" content="code-UTlFxDZspp"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?f30a76e6d5701be25349f80c829c0a52";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: souldjl","link":"链接: ","source":"来源: 高级前端进阶","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#2d3035","position":"bottom-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'interview-css',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-01-16 12:38:37'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">2</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/sunchaser-lilu/sunchaser-cdn@master/lilu.org.cn/index_1.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">高级前端进阶</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">interview-css</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-01-16T04:38:37.000Z" title="发表于 2022-01-16 12:38:37">2022-01-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-01-16T04:38:37.000Z" title="更新于 2022-01-16 12:38:37">2022-01-16</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%95%99%E7%A8%8B/">教程</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%95%99%E7%A8%8B/Markdown/">Markdown</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>13分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="interview-css"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/37435.html#post-comment"><span class="gitalk-comment-count"></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="CSS-部分问题与解答"><a href="#CSS-部分问题与解答" class="headerlink" title="CSS 部分问题与解答"></a>CSS 部分问题与解答</h2><p>这里是 <a target="_blank" rel="noopener" href="http://davidshariff.com/quiz/">Front End Web Development Quiz</a> 中的 CSS部分问题与解答.</p>
+<h3 id="Q-CSS-属性是否区分大小写？"><a href="#Q-CSS-属性是否区分大小写？" class="headerlink" title="Q: CSS 属性是否区分大小写？"></a>Q: CSS 属性是否区分大小写？</h3><pre><code>    <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ul &#123;</span><br><span class="line">    MaRGin: 10px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    
+ A: 不区分。
+ HTML，CSS都对大小写不敏感，但为了更好的可读性和团队协作一般都小写，而在XHTML 中元素名称和属性是必须小写的。
+</code></pre>
+<h3 id="Q-行内-inline-元素-设置margin-top和margin-bottom-是否起作用？"><a href="#Q-行内-inline-元素-设置margin-top和margin-bottom-是否起作用？" class="headerlink" title="Q: 行内(inline)元素 设置margin-top和margin-bottom 是否起作用？"></a>Q: 行内(inline)元素 设置<code>margin-top</code>和<code>margin-bottom</code> 是否起作用？</h3><pre><code>A: 不起作用。(答案是起作用，个人觉得不对。)
+
+html 里的元素分为替换元素（replaced element）和非替换元素（non-replaced element）。
+  - 替换元素是指用作为其他内容占位符的一个元素。最典型的就是`img`，它只是指向一个图像文件。以及大多数表单元素也是替换，例如`input`等。
+  - 非替换元素是指内容包含在文档中的元素。例如，如果一个段落的文本内容都放在该元素本身之内，则这个段落就是一个非替换元素。
+
+讨论`margin-top`和`margin-bottom`对行内元素是否起作用，则要对行内替换元素和行内非替换元素分别讨论。
+
+首先我们应该明确外边距可以应用到行内元素，规范中是允许的，不过由于在向一个行内非替换元素应用外边距，对行高(line-height)没有任何影响。由于外边距实际上是透明的。所以对声明`margin-top`和`margin-bottom`没有任何视觉效果。其原因就在于行内非替换元素的外边距不会改变一个元素的行高。而对于行内非替换元素的左右边距则不是这样，是有影响的。
+
+而为替换元素设置的外边距会影响行高，可能会使行高增加或减少，这取决于上下外边距的值。行内替换元素的左右边距与非替换元素的左右边距的作用一样。来看看demo:
+
+&lt;http://codepen.io/paddingme/pen/JwCDF&gt;
+</code></pre>
+<h3 id="Q-对内联元素设置padding-top和padding-bottom是否会增加它的高度？（原题是Does-setting-padding-top-and-padding-bottom-on-an-inline-element-add-to-its-dimensions-）"><a href="#Q-对内联元素设置padding-top和padding-bottom是否会增加它的高度？（原题是Does-setting-padding-top-and-padding-bottom-on-an-inline-element-add-to-its-dimensions-）" class="headerlink" title="Q: 对内联元素设置padding-top和padding-bottom是否会增加它的高度？（原题是Does setting padding-top and padding-bottom on an inline element add to its dimensions?）"></a>Q: 对内联元素设置<code>padding-top</code>和<code>padding-bottom</code>是否会增加它的高度？（原题是Does setting padding-top and padding-bottom on an inline element add to its dimensions?）</h3><pre><code>A: 答案是不会。同上题比较纠结，不太明白这里的 dimensions指的是到底是什么意思？放置一边，咱们来分析下。对于行内元素，设置左右内边距，左右内边距将是可见的。而设置上下内边距，设置背景颜色后可以看见内边距区域有增加，对于行内非替换元素，不会影响其行高，不会撑开父元素。而对于替换元素，则撑开了父元素。看下demo，更好的理解下：
+
+&lt;http://codepen.io/paddingme/pen/CnFpa&gt;
+</code></pre>
+<h3 id="Q-设置p的font-size-10rem，当用户重置或拖曳浏览器窗口时，文本大小是否会也随着变化？"><a href="#Q-设置p的font-size-10rem，当用户重置或拖曳浏览器窗口时，文本大小是否会也随着变化？" class="headerlink" title="Q: 设置p的font-size:10rem，当用户重置或拖曳浏览器窗口时，文本大小是否会也随着变化？"></a>Q: 设置<code>p</code>的<code>font-size:10rem</code>，当用户重置或拖曳浏览器窗口时，文本大小是否会也随着变化？</h3><pre><code>A: 不会。
+
+`rem`是以`html`根元素中`font-size`的大小为基准的相对度量单位，文本的大小不会随着窗口的大小改变而改变。
+</code></pre>
+<h3 id="Q-伪类选择器-checked将作用与input类型为radio或者checkbox-不会作用于option。"><a href="#Q-伪类选择器-checked将作用与input类型为radio或者checkbox-不会作用于option。" class="headerlink" title="Q: 伪类选择器:checked将作用与input类型为radio或者checkbox,不会作用于option。"></a>Q: 伪类选择器<code>:checked</code>将作用与<code>input</code>类型为<code>radio</code>或者<code>checkbox</code>,不会作用于<code>option</code>。</h3><pre><code>A: 不对。
+
+伪类选择器`checked`的定义很明显:
+
+&gt; The :checked CSS pseudo-class selector represents any radio (`&lt;input type=&quot;radio&quot;&gt;`), checkbox (`&lt;input type=&quot;checkbox&quot;&gt;`) or option (`&lt;option&gt;`in a `&lt;select&gt;`) element that is checked or toggled to an on state. The user can change this state by clicking on the element, or selecting a different value, in which case the :checked pseudo-class no longer applies to this element, but will to the relevant one.
+</code></pre>
+<h3 id="Q-在HTML文本中，伪类-root总是指向html元素？"><a href="#Q-在HTML文本中，伪类-root总是指向html元素？" class="headerlink" title="Q: 在HTML文本中，伪类:root总是指向html元素？"></a>Q: 在HTML文本中，伪类<code>:root</code>总是指向<code>html</code>元素？</h3><pre><code>A: 不是（答案中给出了是 ==||）。以下摘自知乎[:root 与 html 在 CSS3 中指的是同一个元素吗？](http://www.zhihu.com/question/20312140)的答案：
+
+&gt; 单指创建的根。这个根可能不是 html ，如果是片段html，没有创建根，则为片段的根。把这下面 URL 打到支持 data URL 的瀏覽器看看（Firefox, Chrome, Safari, Opera），可见一斑：
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data:application/xhtml+xml,&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;style&gt;:root &#123; background: green; &#125; html &#123; background: red !important; &#125;&lt;/style&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+</code></pre>
+<h3 id="Q-translate-方法能移动一个元素在z轴上的位置？"><a href="#Q-translate-方法能移动一个元素在z轴上的位置？" class="headerlink" title="Q:translate()方法能移动一个元素在z轴上的位置？"></a>Q:<code>translate()</code>方法能移动一个元素在z轴上的位置？</h3><pre><code>A: 不能。`translate()`方法只能改变x轴，y轴上的位移。
+</code></pre>
+<h3 id="Q-如下代码中文本“Sausage”的颜色是"><a href="#Q-如下代码中文本“Sausage”的颜色是" class="headerlink" title="Q: 如下代码中文本“Sausage”的颜色是?"></a>Q: 如下代码中文本“Sausage”的颜色是?</h3><pre><code><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul class=&quot;shopping-list&quot; id=&quot;awesome&quot;&gt;</span><br><span class="line">    &lt;li&gt;&lt;span&gt;Milk&lt;/span&gt;&lt;/li&gt;</span><br><span class="line">    &lt;li class=&quot;favorite&quot; id=&quot;must-buy&quot;&gt;&lt;span class=&quot;highlight&quot;&gt;Sausage&lt;/span&gt;&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ul &#123;color:red;&#125;</span><br><span class="line">li &#123;color:blue;&#125;</span><br></pre></td></tr></table></figure>
+A: blue。
+</code></pre>
+<h3 id="Q-如下代码中文本“Sausage”的颜色是-1"><a href="#Q-如下代码中文本“Sausage”的颜色是-1" class="headerlink" title="Q: 如下代码中文本“Sausage”的颜色是?"></a>Q: 如下代码中文本“Sausage”的颜色是?</h3><pre><code><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul class=&quot;shopping-list&quot; id=&quot;awesome&quot;&gt;</span><br><span class="line">    &lt;li&gt;&lt;span&gt;Milk&lt;/span&gt;&lt;/li&gt;</span><br><span class="line">    &lt;li class=&quot;favorite&quot; id=&quot;must-buy&quot;&gt;&lt;span class=&quot;highlight&quot;&gt;Sausage&lt;/span&gt;&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ul &#123;color:red;&#125;</span><br><span class="line">#must-buy &#123;color:blue;&#125;</span><br></pre></td></tr></table></figure>
+A: blue。
+</code></pre>
+<h3 id="Q-如下代码中文本“Sausage”的颜色是-2"><a href="#Q-如下代码中文本“Sausage”的颜色是-2" class="headerlink" title="Q: 如下代码中文本“Sausage”的颜色是?"></a>Q: 如下代码中文本“Sausage”的颜色是?</h3><pre><code><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul class=&quot;shopping-list&quot; id=&quot;awesome&quot;&gt;</span><br><span class="line">    &lt;li&gt;&lt;span&gt;Milk&lt;/span&gt;&lt;/li&gt;</span><br><span class="line">    &lt;li class=&quot;favorite&quot; id=&quot;must-buy&quot;&gt;&lt;span class=&quot;highlight&quot;&gt;Sausage&lt;/span&gt;&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.shopping-list .favorite &#123;</span><br><span class="line">    color: red;</span><br><span class="line">&#125;</span><br><span class="line">#must-buy &#123;</span><br><span class="line">    color: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+A: blue。
+</code></pre>
+<h3 id="Q-如下代码中文本“Sausage”的颜色是-3"><a href="#Q-如下代码中文本“Sausage”的颜色是-3" class="headerlink" title="Q: 如下代码中文本“Sausage”的颜色是?"></a>Q: 如下代码中文本“Sausage”的颜色是?</h3><pre><code><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul class=&quot;shopping-list&quot; id=&quot;awesome&quot;&gt;</span><br><span class="line">    &lt;li&gt;&lt;span&gt;Milk&lt;/span&gt;&lt;/li&gt;</span><br><span class="line">    &lt;li class=&quot;favorite&quot; id=&quot;must-buy&quot;&gt;&lt;span class=&quot;highlight&quot;&gt;Sausage&lt;/span&gt;&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ul#awesome &#123;</span><br><span class="line">    color: red;</span><br><span class="line">&#125;</span><br><span class="line">ul.shopping-list li.favorite span &#123;</span><br><span class="line">    color: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+A: blue。
+</code></pre>
+<h3 id="Q-如下代码中文本“Sausage”的颜色是-4"><a href="#Q-如下代码中文本“Sausage”的颜色是-4" class="headerlink" title="Q: 如下代码中文本“Sausage”的颜色是?"></a>Q: 如下代码中文本“Sausage”的颜色是?</h3><pre><code><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul class=&quot;shopping-list&quot; id=&quot;awesome&quot;&gt;</span><br><span class="line">    &lt;li&gt;&lt;span&gt;Milk&lt;/span&gt;&lt;/li&gt;</span><br><span class="line">    &lt;li class=&quot;favorite&quot; id=&quot;must-buy&quot;&gt;&lt;span class=&quot;highlight&quot;&gt;Sausage&lt;/span&gt;&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ul#awesome #must-buy &#123;</span><br><span class="line">    color: red;</span><br><span class="line">&#125;</span><br><span class="line">.favorite span &#123;</span><br><span class="line">    color: blue!important;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+A: blue。
+</code></pre>
+<h3 id="Q-如下代码中文本“Sausage”的颜色是-5"><a href="#Q-如下代码中文本“Sausage”的颜色是-5" class="headerlink" title="Q: 如下代码中文本“Sausage”的颜色是?"></a>Q: 如下代码中文本“Sausage”的颜色是?</h3><pre><code><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul class=&quot;shopping-list&quot; id=&quot;awesome&quot;&gt;</span><br><span class="line">    &lt;li&gt;&lt;span&gt;Milk&lt;/span&gt;&lt;/li&gt;</span><br><span class="line">    &lt;li class=&quot;favorite&quot; id=&quot;must-buy&quot;&gt;&lt;span class=&quot;highlight&quot;&gt;Sausage&lt;/span&gt;&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ul.shopping-list li .highlight &#123;</span><br><span class="line">    color: red;</span><br><span class="line">&#125;</span><br><span class="line">ul.shopping-list li .highlight:nth-of-type(odd) &#123;</span><br><span class="line">    color: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+A: blue。
+</code></pre>
+<h3 id="Q-如下代码中文本“Sausage”的颜色是-6"><a href="#Q-如下代码中文本“Sausage”的颜色是-6" class="headerlink" title="Q: 如下代码中文本“Sausage”的颜色是?"></a>Q: 如下代码中文本“Sausage”的颜色是?</h3><pre><code><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul class=&quot;shopping-list&quot; id=&quot;awesome&quot;&gt;</span><br><span class="line">    &lt;li&gt;&lt;span&gt;Milk&lt;/span&gt;&lt;/li&gt;</span><br><span class="line">    &lt;li class=&quot;favorite&quot; id=&quot;must-buy&quot;&gt;&lt;span class=&quot;highlight&quot;&gt;Sausage&lt;/span&gt;&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#awesome .favorite:not(#awesome) .highlight &#123;</span><br><span class="line">    color: red;</span><br><span class="line">&#125;</span><br><span class="line">#awesome .highlight:nth-of-type(1):nth-last-of-type(1) &#123;</span><br><span class="line">    color: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+A: blue。
+</code></pre>
+<h3 id="Q-example位置如何变化："><a href="#Q-example位置如何变化：" class="headerlink" title="Q:#example位置如何变化："></a>Q:<code>#example</code>位置如何变化：</h3><pre><code><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id=&quot;example&quot;&gt;Hello&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#example &#123;margin-bottom: -5px;&#125;</span><br></pre></td></tr></table></figure>
+A: 向上移动5px。
+</code></pre>
+<h3 id="Q-example位置如何变化：-1"><a href="#Q-example位置如何变化：-1" class="headerlink" title="Q: #example位置如何变化："></a>Q: <code>#example</code>位置如何变化：</h3><pre><code><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id=&quot;example&quot;&gt;Hello&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#example &#123;margin-left: -5px;&#125;</span><br></pre></td></tr></table></figure>
+A: 向左移动5px。
+</code></pre>
+<h3 id="i-am-useless-会被浏览器加载吗？"><a href="#i-am-useless-会被浏览器加载吗？" class="headerlink" title="#i-am-useless 会被浏览器加载吗？"></a><code>#i-am-useless</code> 会被浏览器加载吗？</h3><pre><code><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;test1&quot;&gt;</span><br><span class="line">    &lt;span id=&quot;test2&quot;&gt;&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#i-am-useless &#123;background-image: url(&#x27;mypic.jpg&#x27;);&#125;</span><br></pre></td></tr></table></figure>
+A: 不会
+</code></pre>
+<h3 id="mypic-jpg-会被浏览器加载吗？"><a href="#mypic-jpg-会被浏览器加载吗？" class="headerlink" title="mypic.jpg 会被浏览器加载吗？"></a><code>mypic.jpg</code> 会被浏览器加载吗？</h3><pre><code><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;test1&quot;&gt;</span><br><span class="line">    &lt;span id=&quot;test2&quot;&gt;&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#test2 &#123;</span><br><span class="line">    background-image: url(&#x27;mypic.jpg&#x27;);</span><br><span class="line">    display: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+A: 会被下载。
+</code></pre>
+<h3 id="mypic-jpg-会被浏览器加载吗？-1"><a href="#mypic-jpg-会被浏览器加载吗？-1" class="headerlink" title="mypic.jpg 会被浏览器加载吗？"></a><code>mypic.jpg</code> 会被浏览器加载吗？</h3><pre><code><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;test1&quot;&gt;</span><br><span class="line">    &lt;span id=&quot;test2&quot;&gt;&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#test1 &#123;</span><br><span class="line">    display: none;</span><br><span class="line">&#125;</span><br><span class="line">#test2 &#123;</span><br><span class="line">    background-image: url(&#x27;mypic.jpg&#x27;);</span><br><span class="line">    visibility: hidden;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+A: 不会被下载。
+</code></pre>
+<h3 id="Q-only-选择器的作用是？"><a href="#Q-only-选择器的作用是？" class="headerlink" title="Q: only 选择器的作用是？"></a>Q: <code>only</code> 选择器的作用是？</h3><pre><code><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@media only screen and (max-width: 1024px) &#123;argin: 0;&#125;</span><br></pre></td></tr></table></figure>
+A：停止旧版本浏览器解析选择器的其余部分。
+
+only 用来定某种特定的媒体类型，可以用来排除不支持媒体查询的浏览器。其实only很多时候是用来对那些不支持Media Query 但却支持Media Type 的设备隐藏样式表的。其主要有：支持媒体特性（Media Queries）的设备，正常调用样式，此时就当only 不存在；对于不支持媒体特性(Media Queries)但又支持媒体类型(Media Type)的设备，这样就会不读了样式，因为其先读only 而不是screen；另外不支持Media Qqueries 的浏览器，不论是否支持only，样式都不会被采用。
+</code></pre>
+<h3 id="Q-overfloa-hidden-是否形成新的块级格式化上下文？"><a href="#Q-overfloa-hidden-是否形成新的块级格式化上下文？" class="headerlink" title="Q:overfloa:hidden 是否形成新的块级格式化上下文？"></a>Q:<code>overfloa:hidden</code> 是否形成新的块级格式化上下文？</h3><pre><code><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">    &lt;p&gt;I am floated&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;So am I&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">div &#123;overflow: hidden;&#125;</span><br><span class="line">p &#123;float: left;&#125;</span><br></pre></td></tr></table></figure>
+A：会形成。
+
+会触发BFC的条件有：
+
+- float的值不为none。
+- overflow的值不为visible。
+- display的值为table-cell, table-caption, inline-block 中的任何一个。
+- position的值不为relative 和static。
+</code></pre>
+<h3 id="Q-screen关键词是指设备物理屏幕的大小还是指浏览器的视窗？"><a href="#Q-screen关键词是指设备物理屏幕的大小还是指浏览器的视窗？" class="headerlink" title="Q: screen关键词是指设备物理屏幕的大小还是指浏览器的视窗？"></a>Q: <code>screen</code>关键词是指设备物理屏幕的大小还是指浏览器的视窗？</h3><pre><code><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@media only screen and (max-width: 1024px) &#123;margin: 0;&#125;</span><br></pre></td></tr></table></figure>
+A: 浏览器视窗
+</code></pre>
+<h2 id="知识点总结"><a href="#知识点总结" class="headerlink" title="知识点总结"></a>知识点总结</h2><p>tips:根据以上考点总结下如下知识点，后期会写文章进行总结，这里只挑出重点进行解析。</p>
+<ul>
+<li><p>关于CSS选择器以及优先级的知识可查阅如下文章：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://www.w3school.com.cn/cssref/css_selectors.asp">CSS 选择器参考手册</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2009/03/css_selectors.html">CSS选择器笔记</a></li>
+<li><a target="_blank" rel="noopener" href="http://blog.fity.cn/post/421/">高级CSS样式选择器</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.qianduan.net/taming-advanced-css-selectors.html">征服高级CSS选择器</a></li>
+<li><a target="_blank" rel="noopener" href="http://developer.51cto.com/art/201009/226852.htm">详解CSS选择器、优先级与匹配原理</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Specificity">优先级</a></li>
+<li><a target="_blank" rel="noopener" href="http://peiwen.lu/css-selectors-must-memorize/#post__title">牢记 31 种 CSS 选择器用法</a></li>
+</ul>
+</li>
+<li><p>如何计算优先级：</p>
+<blockquote>
+<p>那么你如何计算指定选择器的优先级？如果你考虑到将优先级表示为用逗号隔开的四个数字就会相当简单，比如：1, 1, 1, 1 或0, 2, 0, 1</p>
+</blockquote>
+<ul>
+<li>第一个数字(a)通常就是0，除非在标签上使用style属性；</li>
+<li>第二个数字(b)是该选择器上的id的数量的总和；</li>
+<li>第三个数字(c)是用在该选择器上的其它属性选择器和伪类的总和。这里包括class (.example) 和属性选择器(比如 <code>li[id=red]</code>)；</li>
+<li>第四个数字(d)计算元素(就像table、p、div等等)和伪元素(就像:first-line等)；</li>
+<li>通用选择器(*)是0优先级；</li>
+<li>如果两个选择器有同样的优先级，在样式表中后面的那个起作用。</li>
+</ul>
+</li>
+<li><p>浏览器CSS匹配顺序：</p>
+<p>浏览器CSS匹配不是从左到右进行查找，而是从右到左进行查找。比如<code>#divBox p span.red&#123;color:red;&#125;</code>，浏览器的查找顺序如下：先查找html中所有class=’red’的span元素，找到后，再查找其父辈元素中是否有p元素，再判断p的父元素中是否有id为divBox的div元素，如果都存在则匹配上。浏览器从右到左进行查找的好处是为了尽早过滤掉一些无关的样式规则和元素。</p>
+</li>
+<li><p><code>display:none</code> 和<code>visibilty:hidden</code>的区别：</p>
+<p>可参考：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://stackoverflow.com/questions/133051/what-is-the-difference-between-visibilityhidden-and-displaynone">What is the difference between visibility:hidden and display:none?</a></li>
+<li><a target="_blank" rel="noopener" href="http://bbs.blueidea.com/thread-2942695-1-1.html">display:none和visibility:hidden的区别！</a></li>
+</ul>
+<blockquote>
+<p><code>display:none</code>和<code>visibility:hidden</code>都是把网页上某个元素隐藏起来的功能，但两者有所区别，经过亲自实验，我发现使用`` visibility:hidden<code>属性会使对象不可见，但该对象在网页所占的空间没有改变（看不见但摸得到），等于留出了一块空白区域，而 </code>display:none`属性会使这个对象彻底消失（看不见也摸不到）</p>
+</blockquote>
+<blockquote>
+<p><code>display:none</code> means that the the tag in question will not appear on the page at all (although you can still interact with it through the dom). There will be no space allocated for it between the other tags. visibility:hidden means that unlike display:none, the tag is not visible, but space is allocated for it on the page. so for example:</p>
+</blockquote>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span&gt;test&lt;/span&gt; | &lt;span&gt;Appropriate style in this tag&lt;/span&gt; | &lt;span&gt;test&lt;/span&gt;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>display:none</code> would be:</p>
+</blockquote>
+<blockquote>
+<p>test |   | test</p>
+</blockquote>
+<blockquote>
+<p><code>visibility:hidden</code> would be:</p>
+</blockquote>
+<blockquote>
+<p>test |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| test</p>
+</blockquote>
+<blockquote>
+<p>In visibility:hidden the tag is rendered, it just isn’t seen on the page.</p>
+</blockquote>
+</li>
+<li><p>浏览器如何渲染，可以查阅如下文章：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://coolshell.cn/articles/9666.html">浏览器的渲染原理简介</a></li>
+<li><a target="_blank" rel="noopener" href="http://developer.51cto.com/art/201311/418133.htm">专题：浏览器:渲染重绘、重排两三事</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.nowamagic.net/academy/detail/48110160">浏览器加载和渲染HTML的顺序以及Gzip的问题</a></li>
+<li><a target="_blank" rel="noopener" href="http://div.io/topic/609">从FE的角度上再看输入url后都发生了什么</a></li>
+</ul>
+</li>
+<li><p>BFC( block formatting contexts ) 块级格式上下文</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://www.w3cplus.com/css/understanding-bfc-and-margin-collapse.html">深入理解BFC和Margin Collapse</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.aliued.cn/2012/12/31/css%E5%B8%83%E5%B1%80%E4%B8%AD%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E5%BA%94%E7%94%A8bfc%E7%9A%84%E4%BE%8B%E5%AD%90.html">CSS布局中一个简单的应用BFC的例子</a></li>
+<li><a target="_blank" rel="noopener" href="http://jqc.me/?p=68">理解BFC(Block Formatting Context)</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>margin，padding相关的知识可以参考查阅《CSS权威指南》</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">souldjl</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://daijl.cn/37435.html">https://daijl.cn/37435.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://daijl.cn" target="_blank">高级前端进阶</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Markdown/">Markdown</a><a class="post-meta__tags" href="/tags/%E6%A0%87%E8%AE%B0%E8%AF%AD%E8%A8%80/">标记语言</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/sunchaser-lilu/sunchaser-cdn@master/lilu.org.cn/index_1.png" data-sites="wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/file/donate.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/file/donate.png" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/c81ea237.html"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/file/posts/c81ea237/cover.jpg" onerror="onerror=null;src='/img/404.png'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Markdown 语法讲解</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/c81ea237.html" title="Markdown 语法讲解"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/file/posts/c81ea237/cover.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-07-13</div><div class="title">Markdown 语法讲解</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">souldjl</div><div class="author-info__description">月亮的信箱里，会不会有星星的来信?</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">2</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div></div><a id="card-info-btn" href="/about/"><i class="fas fa-user-circle"></i><span>关于作者</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/souldjl" target="_blank" title="GitHub"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:1554358321@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">欢迎光临！感谢访问本站 \(￣︶￣*\))<br>博客访问量在二月初更换域名之后重置了，所以看起来比较少ヾ(•ω•`)o</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS-%E9%83%A8%E5%88%86%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E7%AD%94"><span class="toc-text">CSS 部分问题与解答</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-CSS-%E5%B1%9E%E6%80%A7%E6%98%AF%E5%90%A6%E5%8C%BA%E5%88%86%E5%A4%A7%E5%B0%8F%E5%86%99%EF%BC%9F"><span class="toc-text">Q: CSS 属性是否区分大小写？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-%E8%A1%8C%E5%86%85-inline-%E5%85%83%E7%B4%A0-%E8%AE%BE%E7%BD%AEmargin-top%E5%92%8Cmargin-bottom-%E6%98%AF%E5%90%A6%E8%B5%B7%E4%BD%9C%E7%94%A8%EF%BC%9F"><span class="toc-text">Q: 行内(inline)元素 设置margin-top和margin-bottom 是否起作用？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-%E5%AF%B9%E5%86%85%E8%81%94%E5%85%83%E7%B4%A0%E8%AE%BE%E7%BD%AEpadding-top%E5%92%8Cpadding-bottom%E6%98%AF%E5%90%A6%E4%BC%9A%E5%A2%9E%E5%8A%A0%E5%AE%83%E7%9A%84%E9%AB%98%E5%BA%A6%EF%BC%9F%EF%BC%88%E5%8E%9F%E9%A2%98%E6%98%AFDoes-setting-padding-top-and-padding-bottom-on-an-inline-element-add-to-its-dimensions-%EF%BC%89"><span class="toc-text">Q: 对内联元素设置padding-top和padding-bottom是否会增加它的高度？（原题是Does setting padding-top and padding-bottom on an inline element add to its dimensions?）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-%E8%AE%BE%E7%BD%AEp%E7%9A%84font-size-10rem%EF%BC%8C%E5%BD%93%E7%94%A8%E6%88%B7%E9%87%8D%E7%BD%AE%E6%88%96%E6%8B%96%E6%9B%B3%E6%B5%8F%E8%A7%88%E5%99%A8%E7%AA%97%E5%8F%A3%E6%97%B6%EF%BC%8C%E6%96%87%E6%9C%AC%E5%A4%A7%E5%B0%8F%E6%98%AF%E5%90%A6%E4%BC%9A%E4%B9%9F%E9%9A%8F%E7%9D%80%E5%8F%98%E5%8C%96%EF%BC%9F"><span class="toc-text">Q: 设置p的font-size:10rem，当用户重置或拖曳浏览器窗口时，文本大小是否会也随着变化？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8-checked%E5%B0%86%E4%BD%9C%E7%94%A8%E4%B8%8Einput%E7%B1%BB%E5%9E%8B%E4%B8%BAradio%E6%88%96%E8%80%85checkbox-%E4%B8%8D%E4%BC%9A%E4%BD%9C%E7%94%A8%E4%BA%8Eoption%E3%80%82"><span class="toc-text">Q: 伪类选择器:checked将作用与input类型为radio或者checkbox,不会作用于option。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-%E5%9C%A8HTML%E6%96%87%E6%9C%AC%E4%B8%AD%EF%BC%8C%E4%BC%AA%E7%B1%BB-root%E6%80%BB%E6%98%AF%E6%8C%87%E5%90%91html%E5%85%83%E7%B4%A0%EF%BC%9F"><span class="toc-text">Q: 在HTML文本中，伪类:root总是指向html元素？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-translate-%E6%96%B9%E6%B3%95%E8%83%BD%E7%A7%BB%E5%8A%A8%E4%B8%80%E4%B8%AA%E5%85%83%E7%B4%A0%E5%9C%A8z%E8%BD%B4%E4%B8%8A%E7%9A%84%E4%BD%8D%E7%BD%AE%EF%BC%9F"><span class="toc-text">Q:translate()方法能移动一个元素在z轴上的位置？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-%E5%A6%82%E4%B8%8B%E4%BB%A3%E7%A0%81%E4%B8%AD%E6%96%87%E6%9C%AC%E2%80%9CSausage%E2%80%9D%E7%9A%84%E9%A2%9C%E8%89%B2%E6%98%AF"><span class="toc-text">Q: 如下代码中文本“Sausage”的颜色是?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-%E5%A6%82%E4%B8%8B%E4%BB%A3%E7%A0%81%E4%B8%AD%E6%96%87%E6%9C%AC%E2%80%9CSausage%E2%80%9D%E7%9A%84%E9%A2%9C%E8%89%B2%E6%98%AF-1"><span class="toc-text">Q: 如下代码中文本“Sausage”的颜色是?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-%E5%A6%82%E4%B8%8B%E4%BB%A3%E7%A0%81%E4%B8%AD%E6%96%87%E6%9C%AC%E2%80%9CSausage%E2%80%9D%E7%9A%84%E9%A2%9C%E8%89%B2%E6%98%AF-2"><span class="toc-text">Q: 如下代码中文本“Sausage”的颜色是?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-%E5%A6%82%E4%B8%8B%E4%BB%A3%E7%A0%81%E4%B8%AD%E6%96%87%E6%9C%AC%E2%80%9CSausage%E2%80%9D%E7%9A%84%E9%A2%9C%E8%89%B2%E6%98%AF-3"><span class="toc-text">Q: 如下代码中文本“Sausage”的颜色是?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-%E5%A6%82%E4%B8%8B%E4%BB%A3%E7%A0%81%E4%B8%AD%E6%96%87%E6%9C%AC%E2%80%9CSausage%E2%80%9D%E7%9A%84%E9%A2%9C%E8%89%B2%E6%98%AF-4"><span class="toc-text">Q: 如下代码中文本“Sausage”的颜色是?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-%E5%A6%82%E4%B8%8B%E4%BB%A3%E7%A0%81%E4%B8%AD%E6%96%87%E6%9C%AC%E2%80%9CSausage%E2%80%9D%E7%9A%84%E9%A2%9C%E8%89%B2%E6%98%AF-5"><span class="toc-text">Q: 如下代码中文本“Sausage”的颜色是?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-%E5%A6%82%E4%B8%8B%E4%BB%A3%E7%A0%81%E4%B8%AD%E6%96%87%E6%9C%AC%E2%80%9CSausage%E2%80%9D%E7%9A%84%E9%A2%9C%E8%89%B2%E6%98%AF-6"><span class="toc-text">Q: 如下代码中文本“Sausage”的颜色是?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-example%E4%BD%8D%E7%BD%AE%E5%A6%82%E4%BD%95%E5%8F%98%E5%8C%96%EF%BC%9A"><span class="toc-text">Q:#example位置如何变化：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-example%E4%BD%8D%E7%BD%AE%E5%A6%82%E4%BD%95%E5%8F%98%E5%8C%96%EF%BC%9A-1"><span class="toc-text">Q: #example位置如何变化：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#i-am-useless-%E4%BC%9A%E8%A2%AB%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8A%A0%E8%BD%BD%E5%90%97%EF%BC%9F"><span class="toc-text">#i-am-useless 会被浏览器加载吗？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mypic-jpg-%E4%BC%9A%E8%A2%AB%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8A%A0%E8%BD%BD%E5%90%97%EF%BC%9F"><span class="toc-text">mypic.jpg 会被浏览器加载吗？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mypic-jpg-%E4%BC%9A%E8%A2%AB%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8A%A0%E8%BD%BD%E5%90%97%EF%BC%9F-1"><span class="toc-text">mypic.jpg 会被浏览器加载吗？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-only-%E9%80%89%E6%8B%A9%E5%99%A8%E7%9A%84%E4%BD%9C%E7%94%A8%E6%98%AF%EF%BC%9F"><span class="toc-text">Q: only 选择器的作用是？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-overfloa-hidden-%E6%98%AF%E5%90%A6%E5%BD%A2%E6%88%90%E6%96%B0%E7%9A%84%E5%9D%97%E7%BA%A7%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%B8%8A%E4%B8%8B%E6%96%87%EF%BC%9F"><span class="toc-text">Q:overfloa:hidden 是否形成新的块级格式化上下文？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-screen%E5%85%B3%E9%94%AE%E8%AF%8D%E6%98%AF%E6%8C%87%E8%AE%BE%E5%A4%87%E7%89%A9%E7%90%86%E5%B1%8F%E5%B9%95%E7%9A%84%E5%A4%A7%E5%B0%8F%E8%BF%98%E6%98%AF%E6%8C%87%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E8%A7%86%E7%AA%97%EF%BC%9F"><span class="toc-text">Q: screen关键词是指设备物理屏幕的大小还是指浏览器的视窗？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93"><span class="toc-text">知识点总结</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/37435.html" title="interview-css"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/sunchaser-lilu/sunchaser-cdn@master/lilu.org.cn/index_1.png" onerror="this.onerror=null;this.src='/img/404.png'" alt="interview-css"/></a><div class="content"><a class="title" href="/37435.html" title="interview-css">interview-css</a><time datetime="2022-01-16T04:38:37.000Z" title="发表于 2022-01-16 12:38:37">2022-01-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/c81ea237.html" title="Markdown 语法讲解"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/file/posts/c81ea237/cover.jpg" onerror="this.onerror=null;this.src='/img/404.png'" alt="Markdown 语法讲解"/></a><div class="content"><a class="title" href="/c81ea237.html" title="Markdown 语法讲解">Markdown 语法讲解</a><time datetime="2020-07-13T06:54:33.000Z" title="发表于 2020-07-13 14:54:33">2020-07-13</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By souldjl</div><div class="footer_custom_text">没有行动的梦想，都是妄想～</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">本地搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk(Object.assign({
+      clientID: '28388bc5382cb36e8b6a',
+      clientSecret: '0976a3fb2d62d4e2b86385d26451a23ead66f6eb',
+      repo: 'souldjl.github.io',
+      owner: 'souldjl',
+      admin: ['souldjl'],
+      id: '79afb8b62cebf0127987937d6a60961f',
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !false) {
+  if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" data-mobile="false" data-text="I,LOVE,YOU" data-fontsize="15px" data-random="false" async="async"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.removeEventListener('scroll', window.tocScrollFn)
+  window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
