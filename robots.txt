@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Disallow: /file/
+
+Sitemap: https://www.daijl.cn/sitemap.xml
