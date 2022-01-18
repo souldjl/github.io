@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>如何实现数字&quot;千分位&quot;转换？</title>
+      <link href="/48835.html"/>
+      <url>/48835.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="如何实现数字”千分位”转换？"><a href="#如何实现数字”千分位”转换？" class="headerlink" title="如何实现数字”千分位”转换？"></a>如何实现数字”千分位”转换？</h2><blockquote><p>业务中经常出现要实现数字千分位用逗号分割以方便查阅数据的需求，请封装一个函数，方便复用</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> Js手写题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Javascript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>函数柯里化</title>
       <link href="/48835.html"/>
       <url>/48835.html</url>
@@ -56,33 +81,6 @@
     
     
     <entry>
-      <title>构建工具 - Vite</title>
-      <link href="/20009.html"/>
-      <url>/20009.html</url>
-      
-        <content type="html"><![CDATA[<h2 id="vite-原理"><a href="#vite-原理" class="headerlink" title="vite 原理"></a>vite 原理</h2><ul><li>浏览器遇到 es import 会发起请求</li><li>vite 拦截请求(实际上起了一个服务)，并返回转换编译后的代码</li><li>vite 区分不同类型的文件请求，并将这些请求交给专门的函数去处理</li><li>浏览器遇到 返回的代码还有请求的，继续发起请求</li><li>实现按需加载，不用打包，启动时间和更新大大缩短</li><li>文件变化了，直接让浏览器再次发起请求即可</li></ul><h2 id="vite-打包优化"><a href="#vite-打包优化" class="headerlink" title="vite 打包优化"></a>vite 打包优化</h2><ul><li>代码分割</li><li>文件合并，减少请求次数</li><li>不打包第三方库，直接引入</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 构建工具 </category>
-          
-          <category> Vite </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Vite </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>构建工具 - webpack</title>
       <link href="/20009.html"/>
       <url>/20009.html</url>
@@ -102,6 +100,33 @@
         <tags>
             
             <tag> Webpack </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>构建工具 - Vite</title>
+      <link href="/20009.html"/>
+      <url>/20009.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="vite-原理"><a href="#vite-原理" class="headerlink" title="vite 原理"></a>vite 原理</h2><ul><li>浏览器遇到 es import 会发起请求</li><li>vite 拦截请求(实际上起了一个服务)，并返回转换编译后的代码</li><li>vite 区分不同类型的文件请求，并将这些请求交给专门的函数去处理</li><li>浏览器遇到 返回的代码还有请求的，继续发起请求</li><li>实现按需加载，不用打包，启动时间和更新大大缩短</li><li>文件变化了，直接让浏览器再次发起请求即可</li></ul><h2 id="vite-打包优化"><a href="#vite-打包优化" class="headerlink" title="vite 打包优化"></a>vite 打包优化</h2><ul><li>代码分割</li><li>文件合并，减少请求次数</li><li>不打包第三方库，直接引入</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 构建工具 </category>
+          
+          <category> Vite </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Vite </tag>
             
         </tags>
       
