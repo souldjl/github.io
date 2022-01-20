@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>手写-new 操作符</title>
+      <link href="/48387.html"/>
+      <url>/48387.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="手写-new-操作符"><a href="#手写-new-操作符" class="headerlink" title="手写-new 操作符"></a>手写-new 操作符</h2><div class="hide-toggle" ><div class="hide-button toggle-title" style=""><i class="fas fa-caret-right fa-fw"></i><span>查看答案</span></div>    <div class="hide-content"><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myNew</span>(<span class="params">fn, ...args</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> obj = <span class="built_in">Object</span>.create(fn.prototype);</span><br><span class="line">  <span class="keyword">let</span> res = fn.call(obj, ...args);</span><br><span class="line">  <span class="keyword">if</span> (res &amp;&amp; (<span class="keyword">typeof</span> res === <span class="string">&quot;object&quot;</span> || <span class="keyword">typeof</span> res === <span class="string">&quot;function&quot;</span>)) &#123;</span><br><span class="line">      <span class="keyword">return</span> res;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> obj;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div><div class="hide-toggle" ><div class="hide-button toggle-title" style=""><i class="fas fa-caret-right fa-fw"></i><span>查看用法</span></div>    <div class="hide-content"><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">this</span>.name = name;</span><br><span class="line">  <span class="built_in">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.say = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">this</span>.age);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">let</span> p1 = myNew(Person, <span class="string">&quot;lihua&quot;</span>, <span class="number">18</span>);</span><br><span class="line"><span class="built_in">console</span>.log(p1.name);</span><br><span class="line"><span class="built_in">console</span>.log(p1);</span><br><span class="line">p1.say();</span><br></pre></td></tr></table></figure></div></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> Js手写题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Javascript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>实现一个手写bind？</title>
+      <link href="/61177.html"/>
+      <url>/61177.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="实现一个手写bind？"><a href="#实现一个手写bind？" class="headerlink" title="实现一个手写bind？"></a>实现一个手写bind？</h2><div class="hide-toggle" ><div class="hide-button toggle-title" style=""><i class="fas fa-caret-right fa-fw"></i><span>查看答案</span></div>    <div class="hide-content"><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.myBind = <span class="function"><span class="keyword">function</span> (<span class="params">context, ...args</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (!context || context === <span class="literal">null</span>) &#123;</span><br><span class="line">    context = <span class="built_in">window</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 创造唯一的key值  作为我们构造的context内部方法名</span></span><br><span class="line">  <span class="keyword">let</span> fn = <span class="built_in">Symbol</span>();</span><br><span class="line">  context[fn] = <span class="built_in">this</span>;</span><br><span class="line">  <span class="keyword">let</span> _this = <span class="built_in">this</span>;</span><br><span class="line">  <span class="comment">//  bind情况要复杂一点</span></span><br><span class="line">  <span class="keyword">const</span> result = <span class="function"><span class="keyword">function</span> (<span class="params">...innerArgs</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 第一种情况 :若是将 bind 绑定之后的函数当作构造函数，通过 new 操作符使用，则不绑定传入的 this，而是将 this 指向实例化出来的对象</span></span><br><span class="line">    <span class="comment">// 此时由于new操作符作用  this指向result实例对象  而result又继承自传入的_this 根据原型链知识可得出以下结论</span></span><br><span class="line">    <span class="comment">// this.__proto__ === result.prototype   //this instanceof result =&gt;true</span></span><br><span class="line">    <span class="comment">// this.__proto__.__proto__ === result.prototype.__proto__ === _this.prototype; //this instanceof _this =&gt;true</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">this</span> <span class="keyword">instanceof</span> _this === <span class="literal">true</span>) &#123;</span><br><span class="line">      <span class="comment">// 此时this指向指向result的实例  这时候不需要改变this指向</span></span><br><span class="line">      <span class="built_in">this</span>[fn] = _this;</span><br><span class="line">      <span class="built_in">this</span>[fn](...[...args, ...innerArgs]); <span class="comment">//这里使用es6的方法让bind支持参数合并</span></span><br><span class="line">      <span class="keyword">delete</span> <span class="built_in">this</span>[fn];</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="comment">// 如果只是作为普通函数调用  那就很简单了 直接改变this指向为传入的context</span></span><br><span class="line">      context[fn](...[...args, ...innerArgs]);</span><br><span class="line">      <span class="keyword">delete</span> context[fn];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="comment">// 如果绑定的是构造函数 那么需要继承构造函数原型属性和方法</span></span><br><span class="line">  <span class="comment">// 实现继承的方式: 使用Object.create</span></span><br><span class="line">  result.prototype = <span class="built_in">Object</span>.create(<span class="built_in">this</span>.prototype);</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div></div><div class="hide-toggle" ><div class="hide-button toggle-title" style=""><i class="fas fa-caret-right fa-fw"></i><span>查看用法</span></div>    <div class="hide-content"><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">function Person(name, age) &#123;</span><br><span class="line">  console.log(name); //&#x27;我是参数传进来的name&#x27;</span><br><span class="line">  console.log(age); //&#x27;我是参数传进来的age&#x27;</span><br><span class="line">  console.log(this); //构造函数this指向实例对象</span><br><span class="line">&#125;</span><br><span class="line">// 构造函数原型的方法</span><br><span class="line">Person.prototype.say = function() &#123;</span><br><span class="line">  console.log(123);</span><br><span class="line">&#125;</span><br><span class="line">let obj = &#123;</span><br><span class="line">  objName: &#x27;我是obj传进来的name&#x27;,</span><br><span class="line">  objAge: &#x27;我是obj传进来的age&#x27;</span><br><span class="line">&#125;</span><br><span class="line">// 普通函数</span><br><span class="line">function normalFun(name, age) &#123;</span><br><span class="line">  console.log(name);   //&#x27;我是参数传进来的name&#x27;</span><br><span class="line">  console.log(age);   //&#x27;我是参数传进来的age&#x27;</span><br><span class="line">  console.log(this); //普通函数this指向绑定bind的第一个参数 也就是例子中的obj</span><br><span class="line">  console.log(this.objName); //&#x27;我是obj传进来的name&#x27;</span><br><span class="line">  console.log(this.objAge); //&#x27;我是obj传进来的age&#x27;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">先测试作为构造函数调用</span><br><span class="line">let bindFun = Person.myBind(obj, &#x27;我是参数传进来的name&#x27;)</span><br><span class="line">let a = new bindFun(&#x27;我是参数传进来的age&#x27;)</span><br><span class="line">a.say() //123</span><br><span class="line"></span><br><span class="line">再测试作为普通函数调用</span><br><span class="line">let bindFun = normalFun.myBind(obj, &#x27;我是参数传进来的name&#x27;)</span><br><span class="line">bindFun(&#x27;我是参数传进来的age&#x27;)</span><br></pre></td></tr></table></figure></div></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> Js手写题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Javascript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>计算机网络常见面试题</title>
       <link href="/14068.html"/>
       <url>/14068.html</url>
